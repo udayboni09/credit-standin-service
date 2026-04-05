@@ -1,0 +1,78 @@
+
+
+
+### 1️⃣ Clone the Repository
+```bash
+git clone 	https://github.com/udayboni09/credit-standin-service.git
+
+cd credit-standin-service
+
+
+python -m venv venv --> Linux
+
+
+venv\Scripts\activate --> Windows 
+
+source venv/bin/activate-->Mac/Linux
+
+--Install Dependencies
+
+pip install -r requirements.txt
+
+
+Run the API Locally: Windows
+scripts\run_local.bat
+
+
+Run the API Locally: Linux
+./scripts/run_local.sh
+
+ API will be available at:
+http://localhost:8000
+
+Testing the API
+
+GET http://localhost:8000/health
+
+Decision Endpoint
+POST http://localhost:8000/decision
+
+Sample payload:
+
+{
+  "credit_score": 720,
+  "income": 90000,
+  "utilization": 20,
+  "delinquency_flag": false,
+  "requested_amount": 7000
+}
+
+
+Running Tests
+pytest -v
+
+
+This runs:
+
+Rule engine tests
+
+API tests
+
+Failover tests
+
+
+
+Generate Synthetic Data
+
+python scripts/generate_synthetic_data.py
+
+
+
+The AI layer generates a simple human‑readable explanation for each decision.
+This can be replaced with Tachyon or any enterprise LLM.
+
+
+
+
+
+
